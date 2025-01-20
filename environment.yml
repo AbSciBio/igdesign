@@ -1,17 +1,16 @@
 name: igdesign
 channels:
-  - pyg
-  - pytorch
-  - nvidia
-  - bioconda
   - conda-forge
-  - defaults
+  - bioconda
+  - nodefaults
 
 dependencies:
-  - pip
   - python==3.11.9
-  - pytorch::pytorch>=2.0,<2.1
-  - pytorch::pytorch-cuda=11.8
+  - ipython
+  - pip
+  - pytorch>=2.0,<2.1
+  - cuda-version = 12.4
+  - cuda-nvcc
   - pandas>=2.0,<2.1
   - lightning>=2.0,<2.1
   - cytoolz>=0.12.3
@@ -20,8 +19,8 @@ dependencies:
   - biopython>=1.84
   - datasets>=2.20.0
   - hmmer=3.3.2
+  - huggingface_hub>=0.24.5
+  - transformers>=4.42.4
   - anarci
   - pip:
-    - huggingface_hub>=0.24.5
-    - transformers>=4.42.4
     - torchtyping>=0.1.4

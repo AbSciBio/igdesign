@@ -30,6 +30,13 @@ $ ./download_ckpts.sh
 This script will download the LMDesign and fine-tuned ProteinMPNN weights associated
 with the split which excluded the [ACVR2B](https://www.ncbi.nlm.nih.gov/gene/93) target.
 
+Version mismatches in the checkpoints from Lightning can be fixed with the following snippet permanently:
+
+```bash
+python -m pytorch_lightning.utilities.upgrade_checkpoint ckpts/igdesign_acvr2b_holdout.ckpt
+python -m pytorch_lightning.utilities.upgrade_checkpoint ckpts/igmpnn_acvr2b_holdout.ckpt
+```
+
 ## Inference
 To inverse fold sequences, run `predict.py` with the environment activated to use the default config with PDB:1N8Z (Trastuzumab-HER2):
 
